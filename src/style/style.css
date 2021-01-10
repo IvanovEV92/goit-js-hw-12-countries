@@ -42,7 +42,8 @@ input::placeholder {
 .list {
   list-style: none;
 }
-p {
+p,
+span {
   margin: 0px;
   font-weight: bold;
 }
