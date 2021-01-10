@@ -1,0 +1,48 @@
+/* Если стран от 2 до 10 */
+.country-list__item {
+  font-size: 30px;
+
+  /* display: flex; */
+}
+.country--list__img {
+  width: 40px;
+}
+/* Если страна одна */
+.country__title {
+  text-align: center;
+}
+.country__item {
+  display: flex;
+  justify-content: center;
+}
+
+.country__information {
+  font-size: 30px;
+}
+.country__flag {
+  margin-left: 40px;
+}
+.country__img {
+  width: 400px;
+}
+/* Общие стили */
+body {
+  background-image: url(../image/dot-grid.png);
+}
+
+input {
+  height: 40px;
+  width: 300px;
+  font-size: 30px;
+}
+input::placeholder {
+  font-size: 30px;
+}
+
+.list {
+  list-style: none;
+}
+p {
+  margin: 0px;
+  font-weight: bold;
+}
