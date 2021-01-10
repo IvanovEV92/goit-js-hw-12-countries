@@ -3,7 +3,7 @@ import country from '../template/country.hbs';
 import countryList from '../template/country-list.hbs';
 import notifyFunctions from '../js/notification';
 const refs = {
-  inputRef: document.querySelector('input[type="text"]'),
+  inputRef: document.querySelector('input'),
   listRef: document.querySelector('.country'),
 };
 
