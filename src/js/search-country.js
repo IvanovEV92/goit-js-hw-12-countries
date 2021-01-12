@@ -16,7 +16,6 @@ const debounceFetchCountry = debounce(e => {
     countriesAPI
       .fetchCountries(nameCountry)
       .then(data => {
-        console.log(data);
         if (data.status === 404) {
           notifyFunctions.notifyNoticeError();
           return Promise.reject(`answer: request incorrect`);
