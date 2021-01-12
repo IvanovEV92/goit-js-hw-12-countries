@@ -16,10 +16,15 @@ As a result, there are a lot of countries. You need to make your request more sp
 function notifyNotice() {
   notice({
     text: 'For detailed information enter a specific query',
-    delay: 5000,
+    delay: 3000,
   });
 }
-
+function notifyNoticeError() {
+  notice({
+    text: 'Request incorrect',
+    delay: 3000,
+  });
+}
 function notifySuccess() {
   success({
     text: 'Your query is correct!',
@@ -27,4 +32,4 @@ function notifySuccess() {
   });
 }
 
-export default { notifyError, notifyNotice, notifySuccess };
+export default { notifyError, notifyNotice, notifySuccess, notifyNoticeError };

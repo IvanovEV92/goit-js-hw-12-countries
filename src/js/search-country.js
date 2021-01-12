@@ -1,4 +1,4 @@
-import lodashDebounce from 'lodash.debounce';
+import debounce from 'lodash.debounce';
 import country from '../template/country.hbs';
 import countryList from '../template/country-list.hbs';
 import notifyFunctions from '../js/notification';
@@ -9,10 +9,24 @@ const refs = {
 };
 
 let nameCountry;
-const debounceFetchCountry = lodashDebounce(e => {
+const debounceFetchCountry = debounce(e => {
   nameCountry = e.target.value;
   refs.listRef.innerHTML = '';
-  countriesAPI.fetchCountries(nameCountry).then(data => listOfCountries(data));
+  if (nameCountry) {
+    countriesAPI
+      .fetchCountries(nameCountry)
+      .then(data => {
+        console.log(data);
+        if (data.status === 404) {
+          notifyFunctions.notifyNoticeError();
+          return Promise.reject(`answer: request incorrect`);
+        }
+        return listOfCountries(data);
+      })
+      .catch(err => {
+        console.warn(err);
+      });
+  }
 }, 500);
 
 refs.inputRef.addEventListener('input', debounceFetchCountry);
